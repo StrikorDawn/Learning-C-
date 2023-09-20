@@ -6,21 +6,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        int min_number = 1;
-        int max_number = 11;
-        string user_response = "";
-        int user_guess = -1;
-        do{
         Random randomGenerator = new Random();
-        int magic_number = randomGenerator.Next(min_number,max_number);
-        Console.WriteLine($"Guess the magic number between {min_number} and {max_number}.");
-            do{
-                Console.Write("What is the magic cheese? ");
-            } while (user_guess != magic_number);
-        Console.Write("Would you like to play again? ");
-        user_response = Console.ReadLine();
-        } while (user_response == "yes");
+        int secret_number = randomGenerator.Next(1-21);
 
-        
+        int user_guess = -1;
+
+        while (user_guess != secret_number)
+        {
+            Console.Write("What is your Guess? ");
+            user_guess = int.Parse(Console.ReadLine());
+
+            if (secret_number > user_guess)
+            {
+                Console.WriteLine("Higher");
+            }
+            else if (secret_number < user_guess)
+            {
+                Console.WriteLine("Lower");
+            }
+            else
+            {
+                Console.WriteLine("You guessed it!");
+            }
+        }
     }
 }
