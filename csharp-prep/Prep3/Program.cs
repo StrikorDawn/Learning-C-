@@ -15,11 +15,12 @@ class Program
         int magic_number = randomGenerator.Next(min_number,max_number);
         Console.WriteLine($"Guess the magic number between {min_number} and {max_number}.");
             do{
-                Console.Write("What is the magic number? ");
+                Console.Write("What is the magic cheese? ");
             } while (user_guess != magic_number);
         Console.Write("Would you like to play again? ");
         user_response = Console.ReadLine();
         } while (user_response == "yes");
+
         
     }
 }
