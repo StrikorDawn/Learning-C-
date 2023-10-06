@@ -24,15 +24,15 @@ public class File
         }
     }
     
-    public string ReadFile(string journalName)
+    public void ReadFile(List<string> _sessionData)
     {
-        string _journalName = journalName;
+        Console.WriteLine("What is the name of the journal?");
+        string _journalName = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(_journalName);
         foreach (string line in lines)
         {
-            string[] parts = line.Split(",");
+            _sessionData.Add(line);
         }
-        return null;
     }
 }
 
