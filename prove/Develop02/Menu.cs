@@ -36,9 +36,9 @@ public class Menu
         return _select;
     }
 
-    public void RunOption(int selection, List<string> _SessionData)
+    public void RunOption(int _selection, List<string> _sessionData)
     {
-        int _option = selection;
+        int _option = _selection;
         int _option1 = 1;
         int _option2 = 2;
         int _option3 = 3;
@@ -47,26 +47,26 @@ public class Menu
         
         if (_option == _option1)
         {
-            Entry tm_run = new Entry();
-            string _entry = tm_run.CreateEntry();
-            _SessionData.Add(_entry);
+            Entry _run = new Entry();
+            string _entry = _run.CreateEntry();
+            _sessionData.Add(_entry);
             
         }
         else if (_option == _option2)
         {
-            Entry tm_run = new Entry();
-            tm_run.DisplayEntry(_SessionData);
+            Entry _show = new Entry();
+            _show.DisplayEntry(_sessionData);
         }
         else if (_option == _option3)
         {
-            File tm_create = new File();
-            tm_create.WriteFile(_SessionData);
+            File _create = new File();
+            _create.WriteFile(_sessionData);
 
         }
         else if (_option == _option4)
         {
-            File tm_read = new File();
-            tm_read.ReadFile(_SessionData);
+            File _read = new File();
+            _read.ReadFile(_sessionData);
             
 
         }

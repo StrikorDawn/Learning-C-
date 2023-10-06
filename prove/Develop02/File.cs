@@ -9,12 +9,12 @@ public class File
         string _journalName = Console.ReadLine();
         string _fileName = _journalName;
 
-        using (StreamWriter createFile = new StreamWriter(_fileName))
+        using (StreamWriter _createFile = new StreamWriter(_fileName))
         {   
             string _journal = _fileName;
-            foreach (string line in _journalEntry)
+            foreach (string _line in _journalEntry)
             {
-                createFile.WriteLine(line);
+                _createFile.WriteLine(_line);
             }
             // You can just do a variable or you can write a string here.
 
@@ -28,10 +28,10 @@ public class File
     {
         Console.WriteLine("What is the name of the journal?");
         string _journalName = Console.ReadLine();
-        string[] lines = System.IO.File.ReadAllLines(_journalName);
-        foreach (string line in lines)
+        string[] _lines = System.IO.File.ReadAllLines(_journalName);
+        foreach (string _line in _lines)
         {
-            _sessionData.Add(line);
+            _sessionData.Add(_line);
         }
     }
 }
