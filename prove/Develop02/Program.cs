@@ -5,14 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> SessionData = new List<string>();
-        int tm_selection = -1;
-        while(tm_selection != 5)
+        List<string> _sessionData = new List<string>();
+        int _selection = 0;
+        while(_selection != 5)
         {
-            Menu tm_nav = new Menu();
-            tm_nav.Display();
-            tm_selection = tm_nav.GetSelection();
-            tm_nav.RunOption(tm_selection, SessionData);
+            Menu _nav = new Menu();
+            _nav.Display();
+            _selection = _nav.GetSelection();
+            _nav.RunOption(_selection, _sessionData);
         
         }
     }
