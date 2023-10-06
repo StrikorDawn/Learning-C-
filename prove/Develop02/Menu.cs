@@ -59,7 +59,8 @@ public class Menu
         }
         else if (_option == _option3)
         {
-            Console.WriteLine("You selected Option 3");
+            File tm_create = new File();
+            tm_create.WriteFile(SessionData);
 
         }
         else if (_option == _option4)

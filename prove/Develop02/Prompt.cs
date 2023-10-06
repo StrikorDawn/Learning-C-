@@ -13,11 +13,12 @@ public class Prompt
         ""
     };
 
-    public void DisplayRandomPrompt()
+    public string DisplayRandomPrompt()
     {
         int _promptNumber = _promptList.Count - 1;
         Random randomGenerator = new Random();
         int _prompt = randomGenerator.Next(_promptNumber);
         Console.WriteLine(_promptList[_prompt]);
+        return _promptList[_prompt];
     }
 }
