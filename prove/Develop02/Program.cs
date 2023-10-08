@@ -7,12 +7,13 @@ class Program
     {
         List<string> _sessionData = new List<string>();
         int _selection = 0;
-        while(_selection != 5)
+        int _quit = 6;
+        while(_selection != 6)
         {
             Menu _nav = new Menu();
             _nav.Display();
             _selection = _nav.GetSelection();
-            _nav.RunOption(_selection, _sessionData);
+            _nav.RunOption(_selection, _quit, _sessionData);
         
         }
     }

@@ -5,9 +5,18 @@ public class File
 {
     public void WriteFile(List<string> _journalEntry)
     {
-        Console.WriteLine("What would you like to call this journal?");
+        Console.WriteLine("What would you like to call this journal? (The default is Journal) ");
         string _journalName = Console.ReadLine();
-        string _fileName = _journalName;
+        string _fileName;
+        
+        if (_journalName == "")
+        {
+            _fileName = "Journal.txt";
+        }
+
+        else{
+            _fileName = _journalName;
+        }
 
         using (StreamWriter _createFile = new StreamWriter(_fileName))
         {   

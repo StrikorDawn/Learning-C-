@@ -6,11 +6,15 @@ public class Prompt
 {
     private List<string> _promptList = new List<string>()
     {
-        "How are you feeling?",
-        "What was your favorite part of the day?",
+        "Who was the most interesting person I interacted with today?",
+        "What was the best part of my day?",
+        "How did I see the hand of the Lord in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I had one thing I could do over today, what would it be?",
         "What good did you do?",
-        "How did you see the Lord's hand in your day?",
-        ""
+        "Did you have any moments to 'Think Celestial' today?",
+        "What's something you are proud of today?"
+
     };
 
     public string DisplayRandomPrompt()

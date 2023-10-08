@@ -10,9 +10,10 @@ public class Menu
     {
         "1. Write New Entry",
         "2. Display Journal",
-        "3. Save Journal",
-        "4. Load File",
-        "5. Quit"
+        "3. View Journal List",
+        "4. Save Journal",
+        "5. Load File",
+        "6. Quit"
     };
 
     public void Display()
@@ -36,9 +37,10 @@ public class Menu
         return _select;
     }
 
-    public void RunOption(int _selection, List<string> _sessionData)
+    public void RunOption(int _selection, int quit, List<string> _sessionData)
     {
         int _option = _selection;
+        int _quit = quit;
         int _option1 = 1;
         int _option2 = 2;
         int _option3 = 3;
@@ -57,20 +59,25 @@ public class Menu
             Entry _show = new Entry();
             _show.DisplayEntry(_sessionData);
         }
-        else if (_option == _option3)
+        else if(_option == _option3)
+        {
+            JournalSelect _view = new JournalSelect();
+            _view.DisplayJournals();
+        }
+        else if (_option == _option4)
         {
             File _create = new File();
             _create.WriteFile(_sessionData);
 
         }
-        else if (_option == _option4)
+        else if (_option == _option5)
         {
             File _read = new File();
             _read.ReadFile(_sessionData);
             
 
         }
-        else if(_option == _option5)
+        else if(_option == _quit)
         {
             Console.WriteLine("Thank you for using The Journal, Have a wonderful day!");
         }
