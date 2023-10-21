@@ -1,11 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.WriteLine("This is in C#");
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
 
-int number = 5;
-number = 8;
-number = number + 3;
-
-Console.WriteLine("What is your favorite color? ");
-string color = Console.ReadLine();
-Console.WriteLine($"Your color is {color}");
+namespace program{
+    class program{
+        private static void Main(){
+            Form mainForm = new Form();
+            Label lblFirst = new Label();
+            mainForm.Width = 300;
+            mainForm.Height = 400; 
+            lblFirst.Text = "Hello World";
+            lblFirst.Location = new Point(150,200);
+            mainForm.Controls.Add(lblFirst);
+            Application.Run(mainForm);
+        }   
+    }
+}
