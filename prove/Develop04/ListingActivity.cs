@@ -4,4 +4,14 @@ public class ListingActivity : Activity
     {
         
     }
+
+    public void AnswerQuestion()
+    {
+
+    }
+
+    public void DisplayTotalResponses()
+    {
+        
+    }
 }
