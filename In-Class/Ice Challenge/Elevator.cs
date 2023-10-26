@@ -3,16 +3,17 @@ public class Elevator {
 
     private int _currentFloor;
     private bool _doorClosed = false;
-    private List<int> _floors = new List<int>();
+    private List<int> _floors;
      
 
     //Constructor
     public Elevator(int currentFloor, bool doorClosed, int numberOfFloors)
     {
+        _floors = new List<int>();
         _currentFloor = currentFloor;
         for (int i = 1; i <= numberOfFloors; i++)
             {
-                _floors.add(i);
+                _floors.Add(i);
             }   
     }
     // Methods
@@ -42,7 +43,7 @@ public class Elevator {
 
     public void ListFloorsAvailable()
     {
-        for (int i = 0; i < _floors.Count, i++) 
+        for (int i = 0; i < _floors.Count; i++) 
         {
             if (i != _currentFloor)
             {
@@ -56,8 +57,4 @@ public class Elevator {
         Console.WriteLine($"Floor: {_currentFloor}");
     }
 }
-public bool DoorStatus()
-{
-    _doorClosed = doorStatus;
-    return _doorClosed;
-}
+

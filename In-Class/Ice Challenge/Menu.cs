@@ -1,19 +1,19 @@
-public class Menu : Elevator
-{
-    // Attributes
-    private int _buttonCall;
+// public class Menu : Elevator
+// {
+//     // Attributes
+//     private int _buttonCall;
 
-    // Constructor
-    class Menu
-    {
+//     // Constructor
+//     class Menu
+//     {
 
-    }
-    //Methods
+//     }
+//     //Methods
 
-    public DisplayMenu()
-    {
-        DisplayCurrentFloor();
+//     public DisplayMenu()
+//     {
+//         DisplayCurrentFloor();
 
-    }
+//     }
 
-}
+// }
