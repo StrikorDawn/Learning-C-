@@ -12,9 +12,9 @@ public class Navagation
         _endProgam = false;
         _menuList = new List<string>
         {
-            "1. Start breathing activity ",
-            "2. Start reflecting activity ",
-            "3. Start listing activity ",
+            "1. Start Breathing Activity ",
+            "2. Start Reflecting Activity ",
+            "3. Start Listing Activity ",
             "4. Quit "
         };
     }

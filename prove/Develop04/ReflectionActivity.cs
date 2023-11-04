@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 public class ReflectionActivity : Activity
 {
     private string _activityName = "Reflection Activity";
@@ -22,8 +24,6 @@ public class ReflectionActivity : Activity
         "How can you keep this experience in mind in the future?"
 };
     private int _userTime;
-    private string _userInput;
-    List<string> _responsses;
     public ReflectionActivity()
     {
         
@@ -36,6 +36,7 @@ public class ReflectionActivity : Activity
         Console.WriteLine();
         int prompt = _random.Next(_prompts.Count()-1);
         DisplayThought(prompt);
+        DisplayQuestion(_userTime, _random);
         DisplayEndPrompt();
 
     }
@@ -51,9 +52,18 @@ public class ReflectionActivity : Activity
         CountDown(5);
     }
 
+    public void DisplayQuestion(int time, Random random)
+    {
+        Console.Clear();
+        DateTime _start = CurrentTime();
+        DateTime _end = SetDelay(_start, time);
+        while(_start <= _end)
+        {
+            int i = random.Next(1,_questions.Count()-1);
+            Console.WriteLine($"> {_questions[i]} ");
+            LoadingAnimation(5);
+            _start = CurrentTime();
+        };
 
-    // public void DisplayQuestion()
-    // {
-        
-    // }
+    }
 }

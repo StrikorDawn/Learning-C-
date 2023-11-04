@@ -40,11 +40,18 @@ public class Activity
         Console.WriteLine($"Welcome to the {_activityName}.\n");
         Console.WriteLine($"{_description}\n");
         Console.WriteLine("How long in seconds, would you like your session? ");
-        Console.Write("> ");
     }
     public int GetUserInt()
     {
-        return int.Parse(Console.ReadLine());
+        int number;
+        Console.Write("> ");
+        try{number = int.Parse(Console.ReadLine());}
+        catch
+        {
+            Console.WriteLine("Please enter valid number.");
+            number = GetUserInt();
+        }
+        return number;
     }
     public DateTime CurrentTime()
     {
@@ -105,13 +112,4 @@ public class Activity
         LoadingAnimation(3);
     }
 
-    public void RandomPrompt()
-    {
-
-    }
-
-    public void DisplayQuestion()
-    {
-
-    }
 }
