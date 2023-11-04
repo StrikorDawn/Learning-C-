@@ -112,4 +112,30 @@ public class Activity
         LoadingAnimation(3);
     }
 
+    public int RandomCheck(Random random,int i, List<bool> bools)
+    {
+        if(bools[i])
+        {
+            while(bools[i])
+                {
+                    i = random.Next(1, bools.Count() - 1);
+                }
+        }
+        bools[i] = true;
+        return i;
+    }
+
+    public bool AllAsked(List<bool> bools)
+    {
+        bool _allAsked = false;
+        for (int i = 0; i < bools.Count(); i++)
+        {
+            if(bools[i])
+            {
+                return _allAsked;
+            }
+        }
+        return _allAsked;
+    }
+
 }

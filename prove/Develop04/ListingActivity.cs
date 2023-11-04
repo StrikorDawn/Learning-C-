@@ -11,16 +11,21 @@ public class ListingActivity : Activity
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?"
     };
+    List<bool> _asked = new List<bool>();
     List<string> _responses = new List<string>();
     public ListingActivity()
     {
-                
+        for (int i = 0; i < _prompts.Count(); i++)
+        {
+            _asked.Add(false);
+        }
     }
 
     public void Start()
     {
         Random _random = new Random();
-        int i = _random.Next(_prompts.Count()-1);
+        int i = _random.Next(_asked.Count() - 1);
+        i = RandomCheck(_random, i, _asked);
         _userTime = StartActivity(_activityName, _description);
         Console.WriteLine();
         Console.WriteLine("List as many responses as you can to the following prompt:");

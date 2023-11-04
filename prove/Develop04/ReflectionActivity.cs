@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography.X509Certificates;
 
 public class ReflectionActivity : Activity
 {
@@ -24,9 +25,13 @@ public class ReflectionActivity : Activity
         "How can you keep this experience in mind in the future?"
 };
     private int _userTime;
+    List<bool> _asked = new List<bool>();
     public ReflectionActivity()
     {
-        
+        for (int i = 0; i < _questions.Count(); i++)
+        {
+            _asked.Add(false);
+        }
     }
     
     public void Start()
@@ -34,7 +39,7 @@ public class ReflectionActivity : Activity
         Random _random = new Random();
         _userTime = StartActivity(_activityName, _description);
         Console.WriteLine();
-        int prompt = _random.Next(_prompts.Count()-1);
+        int prompt = _random.Next(1,_prompts.Count()-1);
         DisplayThought(prompt);
         DisplayQuestion(_userTime, _random);
         DisplayEndPrompt();
@@ -54,16 +59,29 @@ public class ReflectionActivity : Activity
 
     public void DisplayQuestion(int time, Random random)
     {
+        int i = random.Next(_asked.Count() - 1);
         Console.Clear();
         DateTime _start = CurrentTime();
         DateTime _end = SetDelay(_start, time);
         while(_start <= _end)
         {
-            int i = random.Next(1,_questions.Count()-1);
+            ResetQuestion(AllAsked(_asked));
+            i = RandomCheck(random, i, _asked);
             Console.WriteLine($"> {_questions[i]} ");
-            LoadingAnimation(5);
+            LoadingAnimation(6);
             _start = CurrentTime();
         };
 
+    }
+
+    public void ResetQuestion(bool allAsked)
+    {
+        if(allAsked)
+        {
+            for (int i = 0; i < _asked.Count(); i++)
+            {
+                _asked[i] = false;   
+            }
+        }
     }
 }
