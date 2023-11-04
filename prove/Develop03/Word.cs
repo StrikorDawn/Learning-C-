@@ -83,14 +83,14 @@ public class Word
             if(item == _words[0])
             {
                 _hiddenScripture = item;
-                Console.WriteLine(item);
-                Console.WriteLine(_hiddenScripture);
+                // Console.WriteLine(item);
+                // Console.WriteLine(_hiddenScripture);
             }
             else
             {
                 _hiddenScripture =$"{_hiddenScripture} {item}";
-                Console.WriteLine(item);
-                Console.WriteLine(_hiddenScripture);
+                // Console.WriteLine(item);
+                // Console.WriteLine(_hiddenScripture);
             }
         }
         return _hiddenScripture;
@@ -101,7 +101,7 @@ public class Word
         bool _allHidden = true;
         for (int i = 0; i < _display.Count; i++)
         {
-            if(_display[i] == true)
+            if(_display[i])
             {
                 _allHidden = false;
             }

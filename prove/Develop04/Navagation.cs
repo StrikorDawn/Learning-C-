@@ -23,6 +23,7 @@ public class Navagation
     {
          do
         {
+            Console.Clear();
             Console.WriteLine("Menu Options:");
             foreach (string _option in _menuList)
             {
@@ -33,25 +34,27 @@ public class Navagation
     }
     public bool MenuSelection()
     {
+            
             bool _quit = false;
 
             Console.WriteLine("Select a choice from the menu: ");
+            Console.Write("> ");
             _userInput = Console.ReadLine();
 
             if (_userInput == "1")
             {
                 BreathingActivity _bActivity = new BreathingActivity();
-                // _bActivity.
+                _bActivity.Start();
             }
             else if (_userInput == "2")
             {
                 ReflectionActivity _rActivity = new ReflectionActivity();
-                // _rActivity.
+                _rActivity.Start();
             }
             else if (_userInput == "3")
             {
                 ListingActivity _lActivity = new ListingActivity();
-                // _lActivity.
+                _lActivity.Start();
             }
             else if (_userInput == "4")
             {
