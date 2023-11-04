@@ -40,11 +40,11 @@ public class Activity
         Console.WriteLine($"Welcome to the {_activityName}.\n");
         Console.WriteLine($"{_description}\n");
         Console.WriteLine("How long in seconds, would you like your session? ");
+        Console.Write("> ");
     }
     public int GetUserInt()
     {
         return int.Parse(Console.ReadLine());
-
     }
     public DateTime CurrentTime()
     {
@@ -62,6 +62,7 @@ public class Activity
     }
     public void DisplayReadyPrompt()
     {
+        Console.Clear();
         Console.WriteLine("Get Ready...");
 
     }
@@ -86,6 +87,15 @@ public class Activity
         }
     }
 
+    public void CountDown(int length)
+    {
+        for (int i = length; i > 0; i--)
+            {
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+    }
 
     public void DisplayEndPrompt()
     {

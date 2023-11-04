@@ -31,16 +31,26 @@ public class ReflectionActivity : Activity
     
     public void Start()
     {
+        Random _random = new Random();
         _userTime = StartActivity(_activityName, _description);
         Console.WriteLine();
-
+        int prompt = _random.Next(_prompts.Count()-1);
+        DisplayThought(prompt);
         DisplayEndPrompt();
 
     }
-    // public void LoadingAnimation()
-    // {
 
-    // }
+    public void DisplayThought(int i)
+    {
+        Console.WriteLine("Consider the following Pormpt:\n");
+        Console.WriteLine($" --- {_prompts[i]} ---\n");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("Now ponder each of the following questions as they relate to this experience.");
+        Console.Write($"You may begin in: ");
+        CountDown(5);
+    }
+
 
     // public void DisplayQuestion()
     // {

@@ -29,21 +29,16 @@ public class BreathingActivity : Activity
         {
             if (_completedBreath)
             {
-                Console.Write($"{_breathIn}");
+                Console.Write($"{_breathIn} ");
                 _completedBreath = false;
             }
             else
             {
-                Console.Write($"{_breathOut}");
+                Console.Write($"{_breathOut} ");
                 _completedBreath = true;
 
             }
-            for (int i = 5; i > 0; i--)
-            {
-                Console.Write(i);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-            }
+            CountDown(5);
             Console.WriteLine("\n");
             if (_completedBreath)
             {
