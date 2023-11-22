@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
         Random randomGenerator = new Random();
-        int secret_number = randomGenerator.Next(1-21);
+        int secret_number = randomGenerator.Next(1,21);
 
         int user_guess = -1;
 
