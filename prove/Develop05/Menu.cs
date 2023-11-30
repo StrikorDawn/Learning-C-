@@ -5,6 +5,7 @@ public class Menu
 {
     // Couldn't Figure out how to add multiple variables into a list in one go.
     int _points = 0;
+    public List<Goal> _goals = new List<Goal>();
 
     public List<string> _menu = new List<string>
     {
@@ -16,6 +17,14 @@ public class Menu
         "6. Quit"
     };
 
+    public List<string> _subMenu = new List<string>
+    {
+        "1. Simple Goal",
+        "2. Eternal Goal",
+        "3. Checklist Goal"
+    };
+
+
     public void Display()
     {
         Console.WriteLine();
@@ -26,14 +35,34 @@ public class Menu
         {
             Console.WriteLine($"  {option}");
         }
+        Console.Write("Select a choice from the menu: ");
+    }
+
+    public void SubDisplay()
+    {
+        Console.WriteLine();
+        Console.WriteLine("The types of Goals are:");
+        foreach(string option in _subMenu)
+        {
+            Console.WriteLine($"  {option}");
+        }
+        Console.Write("What type of goal would you like to create? ");
     }
 
     public int GetSelection()
     {
-        Console.Write("Select a choice from the menu: ");
-        string _option = Console.ReadLine();
-        int _select = int.Parse(_option);
-        return _select;
+        try
+        {
+            string _option = Console.ReadLine();
+            int _select = int.Parse(_option);
+            return _select;
+        }
+        catch (System.Exception)
+        {
+            Console.WriteLine("Please enter a valid numereical option.");
+            return GetSelection();
+        }
+        
     }
 
     public void RunOption(int _selection)
@@ -48,22 +77,53 @@ public class Menu
         
         if (_option == _option1)
         {
-            
+            SubDisplay();
+            int _input = GetSelection();
+            if (_input == 1)
+            {
+                SimpleGoal simple = new SimpleGoal();
+                simple.CreateGoal();
+                _goals.Add(simple);
+                
+            }
+            else if(_input == 2)
+            {
+                EternalGoal eternal = new EternalGoal();
+                eternal.CreateGoal();
+                _goals.Add(eternal);
+                
+            }
+            else if(_input == 3)
+            {
+                ChecklistGoal checklist = new ChecklistGoal();
+                checklist.CreateGoal();
+                _goals.Add(checklist);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid numereical option.");
+            }
         }
         else if (_option == _option2)
         {
-
+                int i = 0;
+            foreach (var item in _goals)
+            {
+                i += 1;
+                item.Display(i);
+            }
+            
         }
         else if (_option == _option3)
         {
             File _create = new File();
-            // _create.WriteFile();
+            _create.WriteFile(_points, _goals);
 
         }
         else if (_option == _option4)
         {
             File _read = new File();
-            // _read.ReadFile();
+            // _read.ReadFile(_points, _goals);
             
 
         }

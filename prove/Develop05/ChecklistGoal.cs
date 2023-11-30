@@ -1,4 +1,7 @@
-public class ChecklistGoal
+public class ChecklistGoal : Goal
 {
-    
+    public ChecklistGoal()
+    {
+        
+    }
 }

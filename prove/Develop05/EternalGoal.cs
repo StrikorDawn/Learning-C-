@@ -1,4 +1,4 @@
-public class EternalGoal
+public class EternalGoal : Goal
 {
     
 }

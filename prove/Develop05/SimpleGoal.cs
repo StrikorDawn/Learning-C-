@@ -1,4 +1,4 @@
-public class SimpleGoal
+public class SimpleGoal : Goal
 {
     
 }
