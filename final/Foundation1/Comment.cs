@@ -9,13 +9,8 @@ public class Comment
         _content = content;
     }
 
-    public void SaveComment()
+    public void Display()
     {
-        
-    }
-
-    public void UpdateCommentTotal()
-    {
-
+        Console.WriteLine($"{_author}: {_content}");
     }
 }

@@ -4,7 +4,7 @@ public class Video
     string _author;
     int _length;
     List<Comment> _comments;
-    int _numComments;
+    int _numComments = 0;
 
     public Video(string title, string author, int length)
     {
@@ -12,7 +12,6 @@ public class Video
         _author = author;
         _length = length;
         _comments = new List<Comment>();
-        _numComments = _comments.Count();
     }
 
     public void DisplayVideo()
@@ -24,6 +23,7 @@ public class Video
     {
         Comment c = new Comment(author, comment);
         _comments.Add(c);
+        _numComments += 1;
     }
     public void DispalyNumComments()
     {
@@ -34,7 +34,7 @@ public class Video
     {
         foreach (var comment in _comments)
         {
-            Console.WriteLine($" {comment}");
+            comment.Display();
         }
     }
 }
