@@ -106,7 +106,8 @@ public class Menu
         }
         else if (_option == _option2)
         {
-                int i = 0;
+            int i = 0;
+            Console.WriteLine("The goals are:");
             foreach (var item in _goals)
             {
                 i += 1;
@@ -129,7 +130,19 @@ public class Menu
         }
         else if(_option == _option5)
         {
-        
+            int i = 0;
+            Console.WriteLine("The goals are:");
+            foreach (var item in _goals)
+            {
+                i += 1;
+                item.Display(i);
+            }
+            Console.WriteLine("Which goal did you accomplish? ");
+            int _input = int.Parse(Console.ReadLine());
+            Goal _completedGoal = _goals[_input - 1];
+            _points += _completedGoal.GetPoints();
+            Console.WriteLine($"You now have {_points} points.");
+
         }
         else if(_option == _quit)
         {

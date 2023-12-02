@@ -8,7 +8,7 @@ public class EternalGoal : Goal
     {
         Console.WriteLine($"{number}. [E] {_goalName} ({_goalDescription})");
     }
-        public override string Format()
+    public override string Format()
     {
         string formated = $"{_goalType}|{_goalName}|{_goalDescription}|{_goalPoints}";
         return formated;

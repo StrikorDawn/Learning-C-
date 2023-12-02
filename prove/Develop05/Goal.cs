@@ -50,8 +50,9 @@ public abstract class Goal
         _goalPoints = int.Parse(items[3]);
     }
 
-    public virtual int CompleteGoal()
+    public virtual int GetPoints()
     {
-        
+        Console.WriteLine($"Congratulations! You have earned {_goalPoints} points!");
+        return _goalPoints;
     }
 }

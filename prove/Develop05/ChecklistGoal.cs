@@ -22,10 +22,13 @@ public class ChecklistGoal : Goal
         {
              Console.WriteLine($"{number}. [X] {_goalName} ({_goalDescription}) -- Currently completed: {_timesCompleted}/{_total}");
         }
+        else
+        {
              Console.WriteLine($"{number}. [ ] {_goalName} ({_goalDescription}) -- Currently completed: {_timesCompleted}/{_total}");
+        }
     }
 
-        public override string Format()
+    public override string Format()
     {
         string formated = $"{_goalType}|{_goalName}|{_goalDescription}|{_goalPoints}|{_bonusPoints}|{_timesCompleted}|{_total}";
         return formated;
@@ -37,5 +40,19 @@ public class ChecklistGoal : Goal
         _timesCompleted = int.Parse(items[5]);
         _total = int.Parse(items[6]);
 
+    }
+
+    public override int GetPoints()
+    {
+        _timesCompleted += 1;
+        if(_timesCompleted == _total)
+        {
+            Console.WriteLine($"Congratulations! You have earned {_goalPoints +_bonusPoints} points!");
+            return _goalPoints + _bonusPoints;
+        }
+        else
+        {
+            return base.GetPoints();
+        }
     }
 }
