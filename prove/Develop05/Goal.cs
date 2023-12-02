@@ -1,11 +1,12 @@
 public abstract class Goal
-{
-    string _goalName;
-    string _goalDescription;
-    int _goalPoints;
-    bool _isComplete;
+{   
+    protected string _goalType;
+    protected string _goalName;
+    protected string _goalDescription;
+    protected int _goalPoints;
+    protected bool _isComplete;
 
-    public void CreateGoal()
+    public virtual void CreateGoal()
     {
         Console.WriteLine("What is the name of your goal? ");
         _goalName = SetString();
@@ -25,17 +26,32 @@ public abstract class Goal
     {
         return int.Parse(Console.ReadLine()); 
     }
-    public void Display(int number)
-    {     
-        if(_isComplete)
-        {
-             Console.WriteLine($"{number}. [X] {_goalName} ({_goalDescription})");
-        }
-             Console.WriteLine($"{number}. [ ] {_goalName} ({_goalDescription})");
+
+    public void SetGoalType(string goalType)
+    {
+        _goalType = goalType;
     }
 
-    public string Format(){
-        string formated = $"{_goalName}|{_goalDescription}|{_goalPoints}|{_isComplete}";
+    public virtual void Display(int number)
+    {     
+        
+    }
+
+    public virtual string Format(){
+        string formated = "";
         return formated;
+    }
+    
+    public virtual void LoadGoal(string[] items)
+    {   
+        _goalType = items[0];
+        _goalName = items[1];
+        _goalDescription = items[2];
+        _goalPoints = int.Parse(items[3]);
+    }
+
+    public virtual int CompleteGoal()
+    {
+        
     }
 }

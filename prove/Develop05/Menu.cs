@@ -123,7 +123,7 @@ public class Menu
         else if (_option == _option4)
         {
             File _read = new File();
-            // _read.ReadFile(_points, _goals);
+            _read.ReadFile(_points, _goals);
             
 
         }

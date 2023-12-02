@@ -1,3 +1,5 @@
 0
-test|this is a test|50|False
-test2|this is a second test|100|False
+Simple|Simple|Simple Test|100|False
+Eternal|Eternal|Eternal Test|50
+Checklist|Cheklist|Checklist Test|50|500|0|3
+Simple|Simple 2|Testing additional Funcionality|500|False
