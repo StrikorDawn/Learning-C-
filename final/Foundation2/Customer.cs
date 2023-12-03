@@ -6,12 +6,12 @@ public class Customer
     public Customer()
     {
         _name = GetName();
-        _address.GetAdress();
+        _address = new Address();
     }
-    public Customer(string name, Address address)
+    public Customer(string name, string street, string city, string state, string county, bool inUSA)
     {
         _name = name;
-        _address = address;
+        _address = new Address(street, city, state, county, inUSA);
     }
     public string GetName()
     {
@@ -22,5 +22,9 @@ public class Customer
     public bool InUSA()
     {
         return _address.InUSA();
-    }   
+    }
+    public string GetShippingLable()
+    {
+        return _address.CreateShippingString();
+    }
 }

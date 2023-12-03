@@ -11,7 +11,7 @@ public class Address
     }
     public Address(string street, string city, string state, string county, bool inUSA)
     {
-        _state = street;
+        _street = street;
         _city = city;
         _state = state;
         _country = county;
