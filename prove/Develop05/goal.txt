@@ -1,5 +1,0 @@
-1400
-Simple|Simple|Simple Test|100|True
-Eternal|Eternal|Eternal Test|50
-Checklist|Cheklist|Checklist Test|50|500|3|3
-Simple|Simple 2|Testing additional Funcionality|500|True
