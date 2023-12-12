@@ -11,7 +11,7 @@ public class Swimming : Activity
         GetPace();
         GetSpeed();
     }
-    public double CalculateDistance(double laps)
+    double CalculateDistance(double laps)
     {
         double distance = laps * 50;
         distance /= 1000;
